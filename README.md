@@ -30,12 +30,15 @@
 - Сконфигурировал Reverse Proxy: HTTPS-трафик принимается WAF на порту 443 и перенаправляется на порт DVWA (8080).
 
   <img width="593" height="647" alt="image" src="https://github.com/user-attachments/assets/91719022-a782-4ba5-892c-b508ccd2cd8f" />
+  
   <img width="539" height="166" alt="image" src="https://github.com/user-attachments/assets/b28fcf66-c2f7-4bdf-a77e-1d38c8699e05" />
 
 - Теперь при обращении из Kali Linux по адресу WAF успешно перенаправляет его на HTTPS и транслирует интерфейс авторизации DVWA.
+  
   <img width="1051" height="630" alt="image" src="https://github.com/user-attachments/assets/2a6ce9dc-c27c-4e74-86cf-5eb1bd1d248c" />
 
 - Провел симуляцию веб-атаки из Kali Linux, отправив классический вектор SQL-инъекции (`' OR 1=1 --`).
+  
   <img width="901" height="390" alt="image" src="https://github.com/user-attachments/assets/9d889f5f-3620-4eb1-be34-8acde344f49e" />
 
 - Успешно подтвердил работу SafeLine WAF: вредоносный запрос был заблокирован, атакующему возвращена страница блокировки, а DVWA остался в безопасности.
@@ -47,10 +50,12 @@
   <img width="1274" height="489" alt="image" src="https://github.com/user-attachments/assets/067960be-23ad-4b9f-bc37-1c0c26088d91" />
 
 - Проанализировал логи WAF во вкладке LOGS: система успешно классифицировала угрозу как SQL-инъекцию (Attack Type: SQL Inj) и зафиксировала тип действия (Action: Blocked).
+  
   <img width="1773" height="397" alt="image" src="https://github.com/user-attachments/assets/13db4615-ca00-4217-b007-8c6470e5f121" />
 
 
 - Во вкладке Detail можно просмотреть событие детальнее и увидеть содержание HTTP-запроса.
-  <img width="750" height="550" alt="image" src="https://github.com/user-attachments/assets/ab42b3de-dd83-4438-9ed7-47faa7096177" />
+  
+  <img width="600" height="450" alt="image" src="https://github.com/user-attachments/assets/ab42b3de-dd83-4438-9ed7-47faa7096177" />
 
 
