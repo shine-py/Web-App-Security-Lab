@@ -31,15 +31,23 @@
 <img width="1051" height="630" alt="image" src="https://github.com/user-attachments/assets/2a6ce9dc-c27c-4e74-86cf-5eb1bd1d248c" />
 
 - Провел симуляцию веб-атаки из Kali Linux, отправив классический вектор SQL-инъекции (`' OR 1=1 --`).
+<img width="901" height="390" alt="image" src="https://github.com/user-attachments/assets/9d889f5f-3620-4eb1-be34-8acde344f49e" />
 
 <img width="1270" height="606" alt="image" src="https://github.com/user-attachments/assets/aa1f26ab-a722-46e7-a5bf-ee05cca929d3" />
 
 - Успешно подтвердил работу SafeLine WAF: вредоносный запрос был заблокирован, атакующему возвращена страница блокировки, а DVWA остался в безопасности.
+  
+<img width="2553" height="1220" alt="image" src="https://github.com/user-attachments/assets/f44594b1-e0c4-4831-99b4-ae90dae2357a" />
 
-<img width="2556" height="1223" alt="image" src="https://github.com/user-attachments/assets/442c88a7-a9d4-486f-b5d1-302237a0ff3f" />
 - Проанализировал зарегистрированный инцидент в консоли мониторинга SafeLine WAF (раздел Attacks/Events). WAF корректно определил IP-адрес источника угрозы (Kali Linux: 192.168.142.131), URL цели атаки и зафиксировал единичную попытку эксплуатации уязвимости.
 
 <img width="1274" height="489" alt="image" src="https://github.com/user-attachments/assets/067960be-23ad-4b9f-bc37-1c0c26088d91" />
 
 - Проанализировал логи WAF во вкладке LOGS: система успешно классифицировала угрозу как SQL-инъекцию (Attack Type: SQL Inj) и зафиксировала тип действия (Action: Blocked).
-<img width="1394" height="492" alt="image" src="https://github.com/user-attachments/assets/26246f91-723b-4fe3-8761-fc63ad614460" />
+<img width="1773" height="397" alt="image" src="https://github.com/user-attachments/assets/13db4615-ca00-4217-b007-8c6470e5f121" />
+
+
+- Во вкладке Detail можно просмотреть событие детальнее и увидеть содержание HTTP-запроса.
+<img width="992" height="674" alt="image" src="https://github.com/user-attachments/assets/ab42b3de-dd83-4438-9ed7-47faa7096177" />
+
+
