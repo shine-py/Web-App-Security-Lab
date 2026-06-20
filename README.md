@@ -20,3 +20,26 @@
 - Установил веб-сервер Apache и развернул приложение DVWA на Ubuntu на порту 8080.
 
 <img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/f4a47320-59d1-4f6f-b935-ab6e095dea93" />
+
+- Сгенерировал самоподписанный SSL сертификат через OpenSSL и добавил его в WAF.
+- Сконфигурировал Reverse Proxy: HTTPS-трафик принимается WAF на порту 443 и перенаправляется на порт DVWA (8080).
+
+<img width="593" height="647" alt="image" src="https://github.com/user-attachments/assets/91719022-a782-4ba5-892c-b508ccd2cd8f" />
+<img width="539" height="166" alt="image" src="https://github.com/user-attachments/assets/b28fcf66-c2f7-4bdf-a77e-1d38c8699e05" />
+
+- Теперь при обращении из Kali Linux по адресу WAF успешно перенаправляет его на HTTPS и транслирует интерфейс авторизации DVWA.
+<img width="1051" height="630" alt="image" src="https://github.com/user-attachments/assets/2a6ce9dc-c27c-4e74-86cf-5eb1bd1d248c" />
+
+- Провел симуляцию веб-атаки из Kali Linux, отправив классический вектор SQL-инъекции (`' OR 1=1 --`).
+
+<img width="1270" height="606" alt="image" src="https://github.com/user-attachments/assets/aa1f26ab-a722-46e7-a5bf-ee05cca929d3" />
+
+- Успешно подтвердил работу SafeLine WAF: вредоносный запрос был заблокирован, атакующему возвращена страница блокировки, а DVWA остался в безопасности.
+
+<img width="2556" height="1223" alt="image" src="https://github.com/user-attachments/assets/442c88a7-a9d4-486f-b5d1-302237a0ff3f" />
+- Проанализировал зарегистрированный инцидент в консоли мониторинга SafeLine WAF (раздел Attacks/Events). WAF корректно определил IP-адрес источника угрозы (Kali Linux: 192.168.142.131), URL цели атаки и зафиксировал единичную попытку эксплуатации уязвимости.
+
+<img width="1274" height="489" alt="image" src="https://github.com/user-attachments/assets/067960be-23ad-4b9f-bc37-1c0c26088d91" />
+
+- Проанализировал логи WAF во вкладке LOGS: система успешно классифицировала угрозу как SQL-инъекцию (Attack Type: SQL Inj) и зафиксировала тип действия (Action: Blocked).
+<img width="1394" height="492" alt="image" src="https://github.com/user-attachments/assets/26246f91-723b-4fe3-8761-fc63ad614460" />
